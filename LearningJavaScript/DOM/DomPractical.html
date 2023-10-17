@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>DOM Manuplation</h1>
+
+    <script>
+      //creating dom element
+      let div = document.createElement("div");
+
+      //editing the created div
+      div.setAttribute("id", "first");
+      div.innerHTML = "This is Created using dom Manuplation ";
+
+      console.log(div);
+
+      //annother optimized way of adding text
+      let text = document.createTextNode("Created using document.textNode ");
+      div.append(document.createElement("br")); // created a line break -- fro semantic
+      div.append(text);
+
+      //adding to tree / displaying it on web
+      document.body.appendChild(div);
+    </script>
+  </body>
+</html>

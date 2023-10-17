@@ -1,0 +1,44 @@
+<!-- 
+    1. setTimeout(handler,time in mili) -- clearTimeout(fn to remove)
+    usecase -- want somthing to happen after some time , -- removing that thing once the the time passes or upon some other event
+
+    2. setInterval(handler,time) -- clearInterval(reference of interval)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>Chai & Code</h1>
+    <button id="start">Start</button>
+    <button id="end">End</button>
+  </body>
+
+  <script>
+    //grabbing button start & end
+    const startBtn = document.querySelector("#start");
+    const endBtn = document.querySelector("#end");
+
+    //task 1 -- upon clicking start btn -- name should apper in a given time interval
+    const printName = function (name) {
+      console.log(name + " " + Date.now());
+    };
+
+    let interval;
+
+    startBtn.addEventListener("click", (event) => {
+      //setInterval ( fn , time delay , args for fn)
+      interval = setInterval(printName, 2000, "vasu");
+    });
+
+    //task 2 -- upon stop click -- printing name should be stoped
+    endBtn.addEventListener("click", (event) => {
+      //takes refernce of which interval to stop
+      clearInterval(interval);
+    });
+  </script>
+</html>

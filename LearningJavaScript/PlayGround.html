@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice</title>
+  </head>
+  <body>
+    <h1>Practice JavaScript Here !</h1>
+    <div>
+      <h4>I am Vasant</h4>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, sit
+        voluptas. Adipisci placeat, tenetur vero itaque accusantium facere quos
+        tempore rem temporibus nulla porro molestias autem iure similique,
+        explicabo harum.
+      </p>
+
+      <ul id="food-items">
+        <li>Spring Roll</li>
+        <li>Chicken</li>
+        <li>Mutton</li>
+        <li>Rice</li>
+      </ul>
+    </div>
+    <div>
+      <p id="result"></p>
+    </div>
+  </body>
+
+  <script>
+    /*Task 1 -- give me tell me everything user click on window*/
+
+    //selectors
+    let p = document.querySelector("#result");
+
+    //events
+    document.body.addEventListener("click", (event) => {
+      userHasClicked = event.target.tagName;
+      console.log(userHasClicked + " " + typeof userHasClicked);
+      p.innerHTML = `Tag selected by user is ${userHasClicked}`;
+    });
+  </script>
+</html>
